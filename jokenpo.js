@@ -23,7 +23,8 @@ class Game {
     }
 
     iniciar() {
-
+        this.npcVitorias = 0;
+        this.p1Vitorias = 0;
     }
 
     escolher(escolha) {
@@ -54,11 +55,6 @@ class Game {
 
     acabou() {
         return Math.max(this.p1Vitorias, this.npcVitorias) > 2;
-    }
-
-    reiniciar() {
-        this.npcVitorias = 0;
-        this.p1Vitorias = 0;
     }
 
 }
@@ -185,7 +181,7 @@ class UI {
         this.reiniciarMensagem();
         this.esconderEscolhas();
         this.zerarPlacar();
-        this.game.reiniciar();
+        this.game.iniciar();
     }
 
     proximaPartida() {
